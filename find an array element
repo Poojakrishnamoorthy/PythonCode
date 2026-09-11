@@ -1,0 +1,11 @@
+##find an array
+
+arr = [5, 8, 12, 20, 7]
+target = 12
+found = False
+
+for i in arr:
+    if i == target:
+        found = True
+
+print(found)
