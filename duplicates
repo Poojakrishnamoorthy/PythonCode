@@ -1,0 +1,34 @@
+--Method 1
+
+arr = [2, 5, 2, 7, 5, 9]
+
+dup = [] 
+
+for i in range(len(arr)):
+  if arr[i] not in dup:
+    dup = dup + [arr[i]]
+print(dup)
+
+--Method 2
+
+arr = [2, 5, 2, 7, 5, 9]
+
+dup = [] 
+for i in range(len(arr)):
+  if i not in dup:
+     dup.append(i)
+
+--Method 3
+duplicate = False
+arr = [2, 5, 2, 7, 5, 9]
+dup = [ ]
+for i in arr:
+    duplicate = False
+    for j in dup:
+        if i == j:
+            duplicate = True
+    if duplicate == False:
+          dup.append(i)
+
+print(dup)
+
