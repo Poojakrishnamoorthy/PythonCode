@@ -1,0 +1,91 @@
+This pattern is called the Flag Pattern or Boolean Flag Pattern. ✅
+
+It is used when you need to check whether something was found, matched, or satisfied before making a decision.
+
+General pattern
+found = False
+
+for item in collection:
+    if condition:
+        found = True
+
+if found == False:
+    # do something when no match was found
+In your problem
+for i in arr1:
+    found = False
+
+    for j in arr2:
+        if i == j:
+            found = True
+
+    if found == False:
+        result.append(i)
+
+Meaning:
+
+Start by assuming i was not found
+        ↓
+Check every element in arr2
+        ↓
+If a match is found, set found = True
+        ↓
+After checking everything:
+    found = True  → do not append
+    found = False → append
+Where you can use this pattern
+1. Check whether an element exists
+found = False
+
+for i in arr:
+    if i == target:
+        found = True
+
+print(found)
+2. Check whether an array contains duplicates
+duplicate = False
+
+for i in range(len(arr)):
+    for j in range(i + 1, len(arr)):
+        if arr[i] == arr[j]:
+            duplicate = True
+3. Find elements present only in the first array
+
+Your current problem:
+
+if found == False:
+    result.append(i)
+4. Check whether two arrays have any common element
+found = False
+
+for i in arr1:
+    for j in arr2:
+        if i == j:
+            found = True
+
+print(found)
+5. Validate a condition
+
+For example, check whether every number is positive:
+
+all_positive = True
+
+for i in arr:
+    if i <= 0:
+        all_positive = False
+
+print(all_positive)
+Important rule
+
+The flag must usually be initialized inside the outer loop when you are checking each new element separately:
+
+for i in arr1:
+    found = False
+
+And the final decision should happen after the inner loop, not inside it.
+
+Memory shortcut
+
+Check many things → remember whether a match happened → decide afterward.
+
+That is the Boolean Flag Pattern.
