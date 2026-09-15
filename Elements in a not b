@@ -1,0 +1,16 @@
+arr1 = [2, 5, 7, 9, 10]
+arr2 = [1, 5, 8, 9, 12]
+
+result = []
+
+for i in arr1:
+    found = False
+
+    for j in arr2:
+        if i == j:
+            found = True
+
+    if found == False:
+        result.append(i)
+
+print(result)
